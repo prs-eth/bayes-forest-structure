@@ -1,0 +1,55 @@
+<graph id="process_s1">
+   <version>1.0</version>
+    
+    <node id="apply_orbit_file">
+       <operator>Apply-Orbit-File</operator>
+       <sources>
+           <sourceProduct>${sourceProduct}</sourceProduct>
+       </sources>
+       <parameters>
+       </parameters>
+    </node>
+    
+    <node id="correct_terrain">
+       <operator>Terrain-Correction</operator>
+       <sources>
+            <sourceProduct refid="apply_orbit_file"/>
+       </sources>
+       <parameters>
+           <demName>External DEM</demName>
+           <externalDEMFile>/scratch2/albecker/downloads/DEM/merged_bilinear_2.tif</externalDEMFile>
+           <imgResamplingMethod>BILINEAR_INTERPOLATION</imgResamplingMethod>
+           <mapProjection>AUTO:42001</mapProjection>
+           <saveProjectedLocalIncidenceAngle>True</saveProjectedLocalIncidenceAngle>
+           <saveSelectedSourceBand>True</saveSelectedSourceBand>
+           <pixelSpacingInMeter>10.0</pixelSpacingInMeter>
+       </parameters>
+    </node>
+
+    <node id="subset">
+        <operator>Subset</operator>
+        <sources>
+            <sourceProduct refid="correct_terrain"/>
+        </sources>
+        <parameters>
+            <sourceBands>Amplitude_VH,Amplitude_VV</sourceBands>
+            <subSamplingX>1</subSamplingX>
+            <subSamplingY>1</subSamplingY>
+            <fullSwath>false</fullSwath>
+            <tiePointGridNames/>
+            <copyMetadata>true</copyMetadata>
+        </parameters>
+    </node>
+
+    <node id="write">
+      <operator>Write</operator>
+      <sources>
+        <sourceProduct refid="subset"/>
+      </sources>
+      <parameters>
+        <file>${target}</file>
+        <formatName>GeoTIFF-BigTIFF</formatName>
+      </parameters>
+  </node>
+    
+</graph>

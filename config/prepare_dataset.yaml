@@ -1,0 +1,13 @@
+s1_reprojected_dir: 'data/sentinel_data/s1_reprojected'
+s2_reprojected_dir: 'data/sentinel_data/s2_reprojected'
+gt_dir: 'data/preprocessed'
+split_mask_dir: 'data/split_masks'
+project_shapefiles: ['data/NHM_projectDekning_AOI_edit2015_V2.shp', 'data/ALS_projects_Dz_all_norway.shp']
+data_bands: [1, 2, 3, 4, 5] # p95, mean height, density, gini, cover
+projects: ['346', '342', '9', '341', '354', '415', '418', '416', '426', '429', '439', '560', '472', '521', '498',
+           '522', '564', '764', '781', '825', '796', '805', '827', '891', '835', '920', '959', '1023', '998',
+           '909', '819', '896', '528', '527', '477', '542', '537', '792', '471', '769', '988']
+sampling_strategy: 'valid_center'
+patch_size: 15
+cloud_prob_threshold: 10
+cloudy_pixels_threshold: 0.1

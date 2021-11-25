@@ -1,0 +1,38 @@
+data:
+  pkl_dir: 'data/pkl/2021-05-18_10-57-45'
+  projects: ['346', '342', '9', '341', '354', '415', '418', '416', '426', '429', '439', '560', '472', '521', '498',
+             '522', '564', '764', '781', '825', '796', '805', '827', '891', '835', '920', '959', '1023', '998',
+             '909', '819', '896', '528', '527', '477', '542', '537', '792', '471', '769', '988']
+  s1_image_bands: [1, 2]
+  s2_image_bands: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  labels_bands: [1, 2, 3, 4, 5]
+  normalize_labels: false
+  both_orbit_directions: true
+  subsample: 0.05
+  loader_args:
+    batch_size: 64
+    num_workers: 4
+    pin_memory: true
+
+model:
+  type: resnext
+  layers: [2,3,5,3]
+  groups: 32
+  width_per_group: 4
+  use_pixel_shortcut: true
+  use_s1_block: true
+
+training:
+  random_seed: 12345
+  deterministic: true
+  resume_checkpoint: null
+  epochs: 400
+  lr: 0.0001
+  weight_decay: 0.001
+  use_wandb_logger: true
+  activate_mean: true
+  scheduler:
+    milestones: [50, 75]
+
+logging:
+    labels_names: ['p95', 'mean_height', 'density', 'gini', 'cover']
