@@ -1,3 +1,5 @@
+# parts taken from torchvision.models.resnet
+
 from typing import Type, Callable, List, Optional, Tuple
 
 import torch
