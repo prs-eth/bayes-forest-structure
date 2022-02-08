@@ -4,8 +4,6 @@ Code accompanying our paper "Country-wide Retrieval of Forest Structure From Opt
 
 ![](highlevel.png)
 
-<img src="highlevel.png" width="200"/>
-
 ## Code organization
 * `./config` configuration files for data preprocessing, training and testing
 * `./src` main project code
@@ -28,5 +26,14 @@ To apply our model to your data, preprocess the SAR data using the `/src/scripts
 ### Training
 For improved efficiency during training, the preprocessed and reprojected Sentinel images as well as the ground truth should be pickled first using the `/src/scripts/prepare_dataset.py` script. For training the `/src/train.py` script (along with the `/config/resnext.yaml` config file) is used.
 
-
 ## Citation
+```
+@misc{becker2021countrywide,
+      title={Country-wide Retrieval of Forest Structure From Optical and SAR Satellite Imagery With Bayesian Deep Learning}, 
+      author={Alexander Becker and Stefania Russo and Stefano Puliti and Nico Lang and Konrad Schindler and Jan Dirk Wegner},
+      year={2021},
+      eprint={2111.13154},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
