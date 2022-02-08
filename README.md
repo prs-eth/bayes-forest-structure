@@ -1,6 +1,6 @@
-# Sentinel Forest Structure
+# bayes-forest-structure
 
-Code accompanying our paper "Country-wide Retrieval of Forest Structure From Optical and SAR Satellite Imagery With Bayesian Deep Learning" [arxiv]
+Code accompanying our paper "Country-wide Retrieval of Forest Structure From Optical and SAR Satellite Imagery With Bayesian Deep Learning" [arXiv](https://arxiv.org/abs/2111.13154)
 
 ![](highlevel.png)
 
