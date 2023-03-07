@@ -52,7 +52,6 @@ def step(batch, model):
     mse = nanmean(error ** 2, mask, dim=(0, 2, 3))
     me = nanmean(error, mask, dim=(0, 2, 3))
 
-    log_phi_squared_mean = nanmean(log_phi_squared, mask, dim=(0, 2, 3)).detach()
     log_var_mean = nanmean(log_var, mask, dim=(0, 2, 3)).detach()
 
     return {
@@ -61,8 +60,6 @@ def step(batch, model):
         **{'mse_' + m: mse[i] for i, m in enumerate(labels_names)},
         **{'mae_' + m: mae[i] for i, m in enumerate(labels_names)},
         **{'me_' + m: me[i] for i, m in enumerate(labels_names)},
-        **{'log_phi_sq_' + m: log_phi_squared_mean[i] for i, m in enumerate(labels_names)},
-        **{'log_eta_sq_' + m: model.log_eta_squared[i] for i, m in enumerate(labels_names)},
         **{'log_var_' + m: log_var_mean[i] for i, m in enumerate(labels_names)}
     }
 
