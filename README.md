@@ -28,12 +28,13 @@ For improved efficiency during training, the preprocessed and reprojected Sentin
 
 ## Citation
 ```
-@misc{becker2021countrywide,
-      title={Country-wide Retrieval of Forest Structure From Optical and SAR Satellite Imagery With Bayesian Deep Learning}, 
-      author={Alexander Becker and Stefania Russo and Stefano Puliti and Nico Lang and Konrad Schindler and Jan Dirk Wegner},
-      year={2021},
-      eprint={2111.13154},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{becker2023country,
+  title={Country-wide retrieval of forest structure from optical and SAR satellite imagery with deep ensembles},
+  author={Becker, Alexander and Russo, Stefania and Puliti, Stefano and Lang, Nico and Schindler, Konrad and Wegner, Jan Dirk},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={195},
+  pages={269--286},
+  year={2023},
+  publisher={Elsevier}
 }
 ```
