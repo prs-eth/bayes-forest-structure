@@ -1,6 +1,6 @@
 # bayes-forest-structure
 
-Code accompanying our paper "Country-wide Retrieval of Forest Structure From Optical and SAR Satellite Imagery With Bayesian Deep Learning" [[arXiv]](https://arxiv.org/abs/2111.13154)
+Code accompanying our paper "Country-wide Retrieval of Forest Structure From Optical and SAR Satellite Imagery With Bayesian Deep Learning" [[link to paper]](https://www.sciencedirect.com/science/article/pii/S0924271622003045)
 
 ![](highlevel.png)
 
